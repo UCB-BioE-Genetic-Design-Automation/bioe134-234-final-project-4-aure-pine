@@ -1,4 +1,4 @@
-from construction_file import *
+from models.construction_file import *
 
 def format_step(step):
     if isinstance(step, PCR):

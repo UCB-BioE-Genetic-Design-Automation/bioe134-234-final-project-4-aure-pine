@@ -1,7 +1,7 @@
 import pytest
 from Bio.Seq import Seq
 from Bio.SeqFeature import SeqFeature, FeatureLocation
-from generate_cf.build_gb import find_restriction_sites, annotate_features, write_genbank_file
+from create_gb_and_cf.build_gb import find_restriction_sites, annotate_features, write_genbank_file
 from Bio import SeqIO
 import os
 
