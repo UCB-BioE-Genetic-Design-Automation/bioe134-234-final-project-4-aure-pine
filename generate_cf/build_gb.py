@@ -1,7 +1,7 @@
 from Bio.Seq import Seq
 from Bio.SeqFeature import SeqFeature, FeatureLocation
 from Bio.SeqRecord import SeqRecord
-from Bio.Restriction import RestrictionBatch, Analysis, RestrictionType
+from Bio.Restriction import RestrictionBatch, Analysis
 from Bio import SeqIO
 
 VALID_ENZYMES = {
@@ -85,10 +85,7 @@ def annotate_features(seq: Seq, components: dict, restriction_sites: dict, enzym
     restriction_batch = RestrictionBatch(enzymes)
     for enzyme_name, sites in restriction_sites.items():
         enzyme = restriction_batch.get(enzyme_name)
-        if enzyme and isinstance(enzyme, RestrictionType):
-            site_length = len(enzyme)  # Dynamically retrieve site length
-        else:
-            site_length = 6  # Default to 6 bp if enzyme site length is unavailable
+        site_length = len(enzyme)  # Dynamically retrieve site length
 
         for site in sites:
             end = site + site_length

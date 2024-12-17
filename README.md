@@ -21,30 +21,6 @@ reverse_complement("ATGC")
 # Returns: "GCAT"
 ```
 
-### 1. Reverse Complement (`reverse_complement`)
-
-- **Description**: This function takes a DNA sequence and returns its reverse complement. Only valid nucleotides (A, T, C, G) are allowed. The function raises a `ValueError` if invalid characters are found.
-- **Input**: A string representing the DNA sequence.
-- **Output**: A string representing the reverse complement of the input DNA sequence.
-
-**Example**:
-```python
-reverse_complement("ATGC")
-# Returns: "GCAT"
-```
-
-### 2. Translate (`translate`)
-
-- **Description**: This function translates a DNA sequence into a corresponding protein sequence. The input sequence must be divisible by 3. If it contains invalid characters or is not a multiple of three, the function raises a `ValueError`. Stop codons are represented as underscores (`_`).
-- **Input**: A string representing the DNA sequence.
-- **Output**: A string representing the translated protein sequence.
-
-**Example**:
-```python
-translate("ATGGCC")
-# Returns: "MA"
-```
-
 ---
 
 ## Error Handling

@@ -66,7 +66,7 @@ def build_construction_file(components, cloning_strategy, enzymes, plasmid, anti
 
     # Write to the Construction File
     cf = ConstructionFile(steps=steps, sequences=sequences)
-    cf_filename = f"{output_filename}.cf.txt"
+    cf_filename = f"{output_filename}.txt"
     with open(cf_filename, "w") as file:
         file.write("# Sequences\n")
         for name, seq in cf.sequences.items():
