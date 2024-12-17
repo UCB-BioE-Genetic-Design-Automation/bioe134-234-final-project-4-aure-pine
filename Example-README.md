@@ -3,23 +3,28 @@
 
 ## Project Overview
 
+This project provides two core bioinformatics utilities: 
+
+1. **Reverse Complement (revcomp)**: Calculates the reverse complement of a DNA sequence.
+2. **Translate**: Translates a DNA sequence into a protein sequence according to the standard genetic code.
+
+These functions are implemented in **Python** and are part of the broader bioinformatics toolset aimed at automating genetic sequence analysis tasks.
+
+---
 
 ## Scope of Work
+
+As part of the final project for BioE 134, I developed two functions that are foundational for sequence analysis:
+
+1. **Reverse Complement**: This function returns the reverse complement of a DNA sequence, which is an essential task in many genetic analysis pipelines.
+   
+2. **Translate**: This function translates a DNA sequence into a corresponding protein sequence by converting each codon into its corresponding amino acid, based on the standard genetic code.
+
+Both functions include input validation and error handling to ensure proper use. The reverse complement function raises an error for sequences containing invalid characters, while the translate function raises an error for sequences not divisible by three, as well as sequences containing invalid characters.
 
 ---
 
 ## Function Descriptions
-
-### 1. asdf (`asdf`)
-- **Description**: This function takes a DNA sequence and returns its reverse complement. Only valid nucleotides (A, T, C, G) are allowed. The function raises a `ValueError` if invalid characters are found.
-- **Input**: A string representing the DNA sequence.
-- **Output**: A string representing the reverse complement of the input DNA sequence.
-
-**Example**:
-```python
-reverse_complement("ATGC")
-# Returns: "GCAT"
-```
 
 ### 1. Reverse Complement (`reverse_complement`)
 
