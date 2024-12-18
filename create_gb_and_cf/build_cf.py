@@ -15,6 +15,7 @@ def format_step(step):
 
 ###
 # Different cloning strategies
+#   New strategies can be added by adding more functions below
 ###
 def handle_golden_gate(components: dict, enzymes: list[str], plasmid: str):
     steps = [
@@ -47,7 +48,7 @@ STRATEGY_HANDLERS = {
     "RestrictionLigation": handle_restriction_ligation
 }
 
-def build_construction_file(components, cloning_strategy, enzymes, plasmid, antibiotic, output_filename: str):
+def build_construction_file(components, cloning_strategy, enzymes, plasmid, antibiotic, strain, output_filename: str):
     """Builds a Construction File describing experimental steps."""
     if "cds" not in components:
         raise ValueError("Components must include at least a 'cds' (coding sequence).")
@@ -62,7 +63,7 @@ def build_construction_file(components, cloning_strategy, enzymes, plasmid, anti
 
     # Add the final transform step
     transform_output = steps[-1].output
-    steps.append(Transform(dna=transform_output, strain="DH5alpha", antibiotic=antibiotic, output="Final_product"))
+    steps.append(Transform(dna=transform_output, strain=strain, antibiotic=antibiotic, output="Final_product"))
 
     # Write to the Construction File
     cf = ConstructionFile(steps=steps, sequences=sequences)

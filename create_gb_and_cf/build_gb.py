@@ -1,59 +1,19 @@
 from Bio.Seq import Seq
 from Bio.SeqFeature import SeqFeature, FeatureLocation
 from Bio.SeqRecord import SeqRecord
-from Bio.Restriction import RestrictionBatch, Analysis
 from Bio import SeqIO
 
-VALID_ENZYMES = {
-    "GoldenGate": ['AarI', 'BbsI', 'BsaI', 'BsmBI', 'SapI', 'BseRI'],
-    "Gibson": [],  # Gibson does not use restriction enzymes.
-    "RestrictionLigation": ['BamHI', 'BglII', 'EcoRI', 'XhoI', 'SpeI', 
-                            'XbaI', 'PstI', 'HindIII', 'NotI', 'XmaI', 'SmaI', 'KpnI', 'SacI', 'SalI']
-}
-
-def find_restriction_sites(seq: Seq, cloning_strategy: str, req_restr_enzymes: list[str] = None):
+def annotate_features(seq: Seq, components: dict):
     """
-    Finds restriction enzyme cut sites on a sequence based on the cloning strategy and/or user-specified enzymes.
-
-    Parameters:
-    - seq (Seq): The sequence to analyze for restriction enzyme sites.
-    - cloning_strategy (str): The chosen cloning strategy (e.g., "GoldenGate", "Gibson").
-    - req_restr_enzymes (list[str], optional): User-specified restriction enzymes.
-
-    Returns:
-    - dict: A dictionary mapping enzymes to their cut site positions on the sequence.
-    """
-    # Combine strategy-specific enzymes and user-defined enzymes
-    strategy_enzymes = VALID_ENZYMES.get(cloning_strategy, [])
-    all_enzymes = set(strategy_enzymes + (req_restr_enzymes or []))
-    
-    if not all_enzymes:
-        print("No restriction enzymes specified for this strategy. Skipping restriction site analysis.")
-        return {}
-
-    # Create a RestrictionBatch for the combined enzymes
-    restriction_batch = RestrictionBatch(list(all_enzymes))
-
-    # Analyze the sequence for cut sites
-    analysis = Analysis(restriction_batch, seq)
-    cut_sites = analysis.full()  # Dictionary mapping enzyme names to cut positions
-
-    return cut_sites
-
-def annotate_features(seq: Seq, components: dict, restriction_sites: dict, enzymes: list[str]):
-    """
-    Annotates components and restriction sites on a sequence.
+    Annotates components on a sequence.
 
     Parameters:
     - seq (Seq): The sequence to annotate.
     - components (dict): Dictionary of components with their sequences (e.g., {"cds": "ATGCGT"}).
-    - restriction_sites (dict): Dictionary of enzymes to their cut site positions.
-    - enzymes (list[str]): List of enzyme names to dynamically retrieve restriction site lengths.
 
     Returns:
-    - list: List of SeqFeature annotations for components and restriction sites.
+    - list: List of SeqFeature annotations for components.
     """
-    from Bio.Restriction import RestrictionBatch
 
     features = []
     
@@ -81,28 +41,15 @@ def annotate_features(seq: Seq, components: dict, restriction_sites: dict, enzym
         else:
             print(f"Warning: Component '{name}' not found in the sequence.")
 
-    # Annotate restriction sites with variable lengths
-    restriction_batch = RestrictionBatch(enzymes)
-    for enzyme_name, sites in restriction_sites.items():
-        enzyme = restriction_batch.get(enzyme_name)
-        site_length = len(enzyme)  # Dynamically retrieve site length
-
-        for site in sites:
-            end = site + site_length
-            feature = SeqFeature(
-                FeatureLocation(site, end),
-                type="restriction_site",
-                qualifiers={"label": enzyme_name}
-            )
-            features.append(feature)
-
     return features
 
-def write_genbank_file(seq: Seq, features: list, output_filename: str, plasmid: str, cloning_strategy: str):
+def write_genbank_file(id, construct_name: str, seq: Seq, features: list, output_filename: str, cloning_strategy: str):
     """
     Writes a GenBank file with annotated sequence features.
 
     Parameters:
+    - id (str):
+    - construct_name (str):
     - seq (Seq): The full sequence to write to the GenBank file.
     - features (list): List of SeqFeature annotations for components and restriction sites.
     - output_filename (str): Base name for the output GenBank file.
@@ -112,14 +59,18 @@ def write_genbank_file(seq: Seq, features: list, output_filename: str, plasmid: 
     Returns:
     - str: The name of the generated GenBank file.
     """
+    if not output_filename or not output_filename.strip():
+        raise OSError("Invalid filename provided")
+
     # Create a SeqRecord with metadata
     record = SeqRecord(
         seq=seq,
-        id="constructed_sequence",
-        name=output_filename,
-        description=f"Annotated construct for cloning strategy: {cloning_strategy}, Backbone: {plasmid}"
+        id=id,
+        name=construct_name,
+        description=f"Annotated construct for {construct_name} using {cloning_strategy}",
+        annotations={"molecule_type": "DNA"}  # Add molecule_type annotation
     )
-    record.features = features  # Add the annotated features
+    record.features.extend(features)  # Add the annotated features
 
     # Define output filename
     genbank_filename = f"{output_filename}.gb"
@@ -130,25 +81,21 @@ def write_genbank_file(seq: Seq, features: list, output_filename: str, plasmid: 
     
     return genbank_filename
 
-def build_genbank_file(sequence: Seq, components: dict, cloning_strategy: str, req_restr_enzymes: list[str], plasmid: str, output_filename: str):
+def build_genbank_file(id: str, construct_name: str, sequence: Seq, components: dict, cloning_strategy: str, output_filename: str):
     """
-    Builds and writes a GenBank file with annotated components and restriction sites.
+    Builds and writes a GenBank file of the created insert with annotated components.
 
     Parameters:
     - sequence (Seq): The built sequence from components.
     - components (dict): Dictionary of components with their sequences.
     - cloning_strategy (str): Cloning strategy to determine valid restriction enzymes.
-    - req_restr_enzymes (list[str]): Validated restriction enzymes.
-    - output_filename (str): Name for the output GenBank file.
     - plasmid (str): Name of the backbone plasmid for metadata.
+    - output_filename (str): Name for the output GenBank file.
     """
-    # Step 1: Find restriction sites
-    restriction_sites = find_restriction_sites(sequence, cloning_strategy, req_restr_enzymes)
+    # Step 1: Annotate the features
+    features = annotate_features(sequence, components)
 
-    # Step 2: Annotate the features
-    features = annotate_features(sequence, components, restriction_sites, req_restr_enzymes)
-
-    # Step 3: Write the GenBank file
-    filename = write_genbank_file(sequence, features, output_filename, plasmid, cloning_strategy)
+    # Step 2: Write the GenBank file
+    filename = write_genbank_file(id, construct_name, sequence, features, output_filename, cloning_strategy)
     
     return filename

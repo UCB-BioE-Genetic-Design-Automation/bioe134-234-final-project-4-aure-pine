@@ -103,7 +103,7 @@ def build_sequence(components: dict, homologous_overhangs: dict = None):
     full_sequence = "".join(sequence_parts)
     return Seq(full_sequence)
 
-def create_gb_and_cf(cloning_strategy:str, plasmid:str, components:dict, req_restr_enzymes:list[str] = None, antibiotic:str = 'Amp', gb_filename:str = 'gb_output', cf_filename:str = 'cf_output'):
+def create_gb_and_cf(cloning_strategy:str, plasmid:str, components:dict, req_restr_enzymes:list[str], antibiotic:str = 'Amp', strain:str = 'S. cerevisiae' , gb_filename:str = 'gb_output', cf_filename:str = 'cf_output'):
     """
     Main function to create GenBank and Construction File.
     1) Checks the inputs
@@ -139,7 +139,7 @@ def create_gb_and_cf(cloning_strategy:str, plasmid:str, components:dict, req_res
     gb_file = build_genbank_file(sequence, components, cloning_strategy, enzymes, plasmid, gb_filename)
 
     # Step 4: Placeholder for Construction File creation
-    cf_file = build_construction_file(components, cloning_strategy, enzymes, plasmid, antibiotic, cf_filename)
+    cf_file = build_construction_file(components, cloning_strategy, enzymes, plasmid, antibiotic, strain, cf_filename)
 
     return gb_file, cf_file
 
