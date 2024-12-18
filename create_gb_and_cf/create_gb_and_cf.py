@@ -1,6 +1,6 @@
 from Bio.Seq import Seq
-from build_gb import build_genbank_file
-from build_cf import build_construction_file
+from create_gb_and_cf.build_gb import build_genbank_file
+from create_gb_and_cf.build_cf import build_construction_file
 
 VALID_ENZYMES = {
     "GoldenGate": ['AarI', 'BbsI', 'BsaI', 'BsmBI', 'SapI', 'BseRI'],
@@ -69,6 +69,10 @@ def build_sequence(components: dict, homologous_overhangs: dict = None):
     """
     valid_bases = {"A", "T", "C", "G"}
 
+    # Ensure the components dictionary contains at least a CDS
+    if "cds" not in components:
+        raise ValueError("The 'components' dictionary must contain at least a 'cds' (coding sequence).")
+    
     # Predefined order of components
     component_order = ["UTR5", "promoter", "cds", "UTR3", "terminator"]
 
@@ -138,3 +142,34 @@ def create_gb_and_cf(cloning_strategy:str, plasmid:str, components:dict, req_res
     cf_file = build_construction_file(components, cloning_strategy, enzymes, plasmid, antibiotic, cf_filename)
 
     return gb_file, cf_file
+
+
+if __name__ == "__main__":
+    # Example inputs
+    cloning_strategy = "GoldenGate"
+    plasmid = "pUC1345"
+    components = {
+        "UTR5": "GATCGATCGATC",
+        "promoter": "ATGCGTACGTAG",
+        "cds": "ATGGCTAGCTAGCTAGCTA",
+        "terminator": "CGTACGTAGCTAGCTAGCTA",
+        "UTR3": "GCGATCGTAGCTAGCTA"
+    }
+    req_restr_enzymes = ["BsaI"]
+    gb_filename = "example_genbank.gb"
+    cf_filename = "example_construction.cf"
+
+    # Run the function
+    try:
+        gb_file, cf_file = create_gb_and_cf(
+            cloning_strategy=cloning_strategy,
+            plasmid=plasmid,
+            components=components,
+            req_restr_enzymes=req_restr_enzymes,
+            gb_filename=gb_filename,
+            cf_filename=cf_filename
+        )
+        print(f"GenBank file created: {gb_file}")
+        print(f"Construction file created: {cf_file}")
+    except ValueError as e:
+        print(f"Error: {e}")
