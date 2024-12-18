@@ -1,12 +1,13 @@
 # DNA Cloning Utilities Project
 
 ## Project Overview
-
-This project provides a set of bioinformatics utilities designed to automate the creation of annotated GenBank and Construction files for DNA cloning experiments. The project supports multiple cloning strategies, including GoldenGate, Gibson, and Restriction-Ligation, offering robust input validation and compatibility checks.
+My group and I worked on the Prototyping and Optimization project. We implemented methods to streamline pathway or circuit design in Yeast.
 
 ---
 
 ## Scope of Work
+What I specifically worked on was the generation of construction and GenBank files from a JSON description. This was intended to automate the creation of annotated GenBank and Construction files for DNA cloning experiments. The project supports multiple cloning strategies, including GoldenGate, Gibson, and Restriction-Ligation, offering robust input validation and compatibility checks.
+
 
 The goal of this project is to streamline the process of constructing annotated DNA sequences for cloning experiments. The key functionalities include:
 
