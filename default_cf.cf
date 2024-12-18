@@ -1,0 +1,1312 @@
+{
+    "steps": [
+        {
+            "operation": "PCR",
+            "output": "Product1",
+            "forward_oligo": "Seq1",
+            "reverse_oligo": "Seq2",
+            "template": "Seq3",
+            "product_size": 101
+        },
+        {
+            "operation": "PCR",
+            "output": "Product2",
+            "forward_oligo": "Seq2",
+            "reverse_oligo": "Seq3",
+            "template": "Seq4",
+            "product_size": 102
+        },
+        {
+            "operation": "PCR",
+            "output": "Product3",
+            "forward_oligo": "Seq3",
+            "reverse_oligo": "Seq4",
+            "template": "Seq5",
+            "product_size": 103
+        },
+        {
+            "operation": "PCR",
+            "output": "Product4",
+            "forward_oligo": "Seq4",
+            "reverse_oligo": "Seq5",
+            "template": "Seq6",
+            "product_size": 104
+        },
+        {
+            "operation": "PCR",
+            "output": "Product5",
+            "forward_oligo": "Seq5",
+            "reverse_oligo": "Seq6",
+            "template": "Seq7",
+            "product_size": 105
+        },
+        {
+            "operation": "PCR",
+            "output": "Product6",
+            "forward_oligo": "Seq6",
+            "reverse_oligo": "Seq7",
+            "template": "Seq8",
+            "product_size": 106
+        },
+        {
+            "operation": "PCR",
+            "output": "Product7",
+            "forward_oligo": "Seq7",
+            "reverse_oligo": "Seq8",
+            "template": "Seq9",
+            "product_size": 107
+        },
+        {
+            "operation": "PCR",
+            "output": "Product8",
+            "forward_oligo": "Seq8",
+            "reverse_oligo": "Seq9",
+            "template": "Seq10",
+            "product_size": 108
+        },
+        {
+            "operation": "PCR",
+            "output": "Product9",
+            "forward_oligo": "Seq9",
+            "reverse_oligo": "Seq10",
+            "template": "Seq11",
+            "product_size": 109
+        },
+        {
+            "operation": "PCR",
+            "output": "Product10",
+            "forward_oligo": "Seq10",
+            "reverse_oligo": "Seq11",
+            "template": "Seq12",
+            "product_size": 110
+        },
+        {
+            "operation": "PCR",
+            "output": "Product11",
+            "forward_oligo": "Seq11",
+            "reverse_oligo": "Seq12",
+            "template": "Seq13",
+            "product_size": 111
+        },
+        {
+            "operation": "PCR",
+            "output": "Product12",
+            "forward_oligo": "Seq12",
+            "reverse_oligo": "Seq13",
+            "template": "Seq14",
+            "product_size": 112
+        },
+        {
+            "operation": "PCR",
+            "output": "Product13",
+            "forward_oligo": "Seq13",
+            "reverse_oligo": "Seq14",
+            "template": "Seq15",
+            "product_size": 113
+        },
+        {
+            "operation": "PCR",
+            "output": "Product14",
+            "forward_oligo": "Seq14",
+            "reverse_oligo": "Seq15",
+            "template": "Seq16",
+            "product_size": 114
+        },
+        {
+            "operation": "PCR",
+            "output": "Product15",
+            "forward_oligo": "Seq15",
+            "reverse_oligo": "Seq16",
+            "template": "Seq17",
+            "product_size": 115
+        },
+        {
+            "operation": "PCR",
+            "output": "Product16",
+            "forward_oligo": "Seq16",
+            "reverse_oligo": "Seq17",
+            "template": "Seq18",
+            "product_size": 116
+        },
+        {
+            "operation": "PCR",
+            "output": "Product17",
+            "forward_oligo": "Seq17",
+            "reverse_oligo": "Seq18",
+            "template": "Seq19",
+            "product_size": 117
+        },
+        {
+            "operation": "PCR",
+            "output": "Product18",
+            "forward_oligo": "Seq18",
+            "reverse_oligo": "Seq19",
+            "template": "Seq20",
+            "product_size": 118
+        },
+        {
+            "operation": "PCR",
+            "output": "Product19",
+            "forward_oligo": "Seq19",
+            "reverse_oligo": "Seq20",
+            "template": "Seq21",
+            "product_size": 119
+        },
+        {
+            "operation": "PCR",
+            "output": "Product20",
+            "forward_oligo": "Seq20",
+            "reverse_oligo": "Seq21",
+            "template": "Seq22",
+            "product_size": 120
+        },
+        {
+            "operation": "PCR",
+            "output": "Product21",
+            "forward_oligo": "Seq21",
+            "reverse_oligo": "Seq22",
+            "template": "Seq23",
+            "product_size": 121
+        },
+        {
+            "operation": "PCR",
+            "output": "Product22",
+            "forward_oligo": "Seq22",
+            "reverse_oligo": "Seq23",
+            "template": "Seq24",
+            "product_size": 122
+        },
+        {
+            "operation": "PCR",
+            "output": "Product23",
+            "forward_oligo": "Seq23",
+            "reverse_oligo": "Seq24",
+            "template": "Seq25",
+            "product_size": 123
+        },
+        {
+            "operation": "PCR",
+            "output": "Product24",
+            "forward_oligo": "Seq24",
+            "reverse_oligo": "Seq25",
+            "template": "Seq26",
+            "product_size": 124
+        },
+        {
+            "operation": "PCR",
+            "output": "Product25",
+            "forward_oligo": "Seq25",
+            "reverse_oligo": "Seq26",
+            "template": "Seq27",
+            "product_size": 125
+        },
+        {
+            "operation": "PCR",
+            "output": "Product26",
+            "forward_oligo": "Seq26",
+            "reverse_oligo": "Seq27",
+            "template": "Seq28",
+            "product_size": 126
+        },
+        {
+            "operation": "PCR",
+            "output": "Product27",
+            "forward_oligo": "Seq27",
+            "reverse_oligo": "Seq28",
+            "template": "Seq29",
+            "product_size": 127
+        },
+        {
+            "operation": "PCR",
+            "output": "Product28",
+            "forward_oligo": "Seq28",
+            "reverse_oligo": "Seq29",
+            "template": "Seq30",
+            "product_size": 128
+        },
+        {
+            "operation": "PCR",
+            "output": "Product29",
+            "forward_oligo": "Seq29",
+            "reverse_oligo": "Seq30",
+            "template": "Seq31",
+            "product_size": 129
+        },
+        {
+            "operation": "PCR",
+            "output": "Product30",
+            "forward_oligo": "Seq30",
+            "reverse_oligo": "Seq31",
+            "template": "Seq32",
+            "product_size": 130
+        },
+        {
+            "operation": "PCR",
+            "output": "Product31",
+            "forward_oligo": "Seq31",
+            "reverse_oligo": "Seq32",
+            "template": "Seq33",
+            "product_size": 131
+        },
+        {
+            "operation": "PCR",
+            "output": "Product32",
+            "forward_oligo": "Seq32",
+            "reverse_oligo": "Seq33",
+            "template": "Seq34",
+            "product_size": 132
+        },
+        {
+            "operation": "PCR",
+            "output": "Product33",
+            "forward_oligo": "Seq33",
+            "reverse_oligo": "Seq34",
+            "template": "Seq35",
+            "product_size": 133
+        },
+        {
+            "operation": "PCR",
+            "output": "Product34",
+            "forward_oligo": "Seq34",
+            "reverse_oligo": "Seq35",
+            "template": "Seq36",
+            "product_size": 134
+        },
+        {
+            "operation": "PCR",
+            "output": "Product35",
+            "forward_oligo": "Seq35",
+            "reverse_oligo": "Seq36",
+            "template": "Seq37",
+            "product_size": 135
+        },
+        {
+            "operation": "PCR",
+            "output": "Product36",
+            "forward_oligo": "Seq36",
+            "reverse_oligo": "Seq37",
+            "template": "Seq38",
+            "product_size": 136
+        },
+        {
+            "operation": "PCR",
+            "output": "Product37",
+            "forward_oligo": "Seq37",
+            "reverse_oligo": "Seq38",
+            "template": "Seq39",
+            "product_size": 137
+        },
+        {
+            "operation": "PCR",
+            "output": "Product38",
+            "forward_oligo": "Seq38",
+            "reverse_oligo": "Seq39",
+            "template": "Seq40",
+            "product_size": 138
+        },
+        {
+            "operation": "PCR",
+            "output": "Product39",
+            "forward_oligo": "Seq39",
+            "reverse_oligo": "Seq40",
+            "template": "Seq41",
+            "product_size": 139
+        },
+        {
+            "operation": "PCR",
+            "output": "Product40",
+            "forward_oligo": "Seq40",
+            "reverse_oligo": "Seq41",
+            "template": "Seq42",
+            "product_size": 140
+        },
+        {
+            "operation": "PCR",
+            "output": "Product41",
+            "forward_oligo": "Seq41",
+            "reverse_oligo": "Seq42",
+            "template": "Seq43",
+            "product_size": 141
+        },
+        {
+            "operation": "PCR",
+            "output": "Product42",
+            "forward_oligo": "Seq42",
+            "reverse_oligo": "Seq43",
+            "template": "Seq44",
+            "product_size": 142
+        },
+        {
+            "operation": "PCR",
+            "output": "Product43",
+            "forward_oligo": "Seq43",
+            "reverse_oligo": "Seq44",
+            "template": "Seq45",
+            "product_size": 143
+        },
+        {
+            "operation": "PCR",
+            "output": "Product44",
+            "forward_oligo": "Seq44",
+            "reverse_oligo": "Seq45",
+            "template": "Seq46",
+            "product_size": 144
+        },
+        {
+            "operation": "PCR",
+            "output": "Product45",
+            "forward_oligo": "Seq45",
+            "reverse_oligo": "Seq46",
+            "template": "Seq47",
+            "product_size": 145
+        },
+        {
+            "operation": "PCR",
+            "output": "Product46",
+            "forward_oligo": "Seq46",
+            "reverse_oligo": "Seq47",
+            "template": "Seq48",
+            "product_size": 146
+        },
+        {
+            "operation": "PCR",
+            "output": "Product47",
+            "forward_oligo": "Seq47",
+            "reverse_oligo": "Seq48",
+            "template": "Seq49",
+            "product_size": 147
+        },
+        {
+            "operation": "PCR",
+            "output": "Product48",
+            "forward_oligo": "Seq48",
+            "reverse_oligo": "Seq49",
+            "template": "Seq50",
+            "product_size": 148
+        },
+        {
+            "operation": "PCR",
+            "output": "Product49",
+            "forward_oligo": "Seq49",
+            "reverse_oligo": "Seq50",
+            "template": "Seq51",
+            "product_size": 149
+        },
+        {
+            "operation": "PCR",
+            "output": "Product50",
+            "forward_oligo": "Seq50",
+            "reverse_oligo": "Seq51",
+            "template": "Seq52",
+            "product_size": 150
+        }
+    ],
+    "sequences": {
+        "Seq1": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq2": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq3": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq4": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq5": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq6": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq7": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq8": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq9": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq10": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq11": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq12": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq13": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq14": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq15": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq16": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq17": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq18": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq19": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq20": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq21": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq22": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq23": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq24": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq25": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq26": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq27": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq28": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq29": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq30": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq31": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq32": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq33": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq34": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq35": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq36": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq37": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq38": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq39": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq40": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq41": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq42": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq43": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq44": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq45": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq46": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq47": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq48": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq49": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq50": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq51": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq52": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq53": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq54": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq55": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq56": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq57": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq58": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq59": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq60": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq61": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq62": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq63": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq64": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq65": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq66": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq67": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq68": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq69": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq70": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq71": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq72": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq73": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq74": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq75": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq76": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq77": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq78": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq79": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq80": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq81": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq82": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq83": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq84": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq85": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq86": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq87": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq88": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq89": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq90": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq91": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq92": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq93": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq94": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq95": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq96": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq97": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq98": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq99": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": false,
+            "is_circular": true,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "Seq100": {
+            "sequence": "ATCGATCGATCGATCGATCGATCGATCGATCGATCGATCG",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        }
+    },
+    "metadata": {
+        "experiment_name": "Large Data Test",
+        "date": null,
+        "author": null,
+        "description": ""
+    }
+}

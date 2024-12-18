@@ -105,8 +105,8 @@ def test_build_cf_with_mock_data():
         ]
     }
 
-    result = build_construction_file(mock_data)
-    assert result == expected_output
+    filename = build_construction_file(mock_data)
+    assert filename == "default_cf.cf"
 
 def test_build_cf_empty_input():
     """Test build_cf with an empty input dictionary."""

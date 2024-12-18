@@ -1,35 +1,32 @@
+import json
+
 def build_construction_file(data):
     """
-    Constructs a Construction File (CF) from the provided data.
+    Constructs a Construction File (CF) from the provided data and writes it to a file.
 
     Parameters:
         data (dict): A dictionary containing the steps, sequences, and metadata.
 
     Returns:
-        dict: A dictionary representing the constructed CF.
+        str: The filename of the generated Construction File.
     """
     # Validate the structure of the input data
     validate_input_data(data)
 
     # Initialize the CF structure
     cf = {
-        "steps": [],
-        "sequences": {},
-        "metadata": {}
+        "steps": process_step(data.get("steps", []), data.get("sequences", {})),
+        "sequences": process_sequences(data.get("sequences", {})),
+        "metadata": process_metadata(data.get("metadata", {}))
     }
 
-    # Process metadata
-    cf["metadata"] = process_metadata(data.get("metadata", {}))
+    # Write the CF to a file
+    filename = data.get("metadata", {}).get("cf_filename", "default_cf") + ".cf"
+    with open(filename, "w") as cf_file:
+        json.dump(cf, cf_file, indent=4)
 
-    # Process sequences
-    cf["sequences"] = process_sequences(data.get("sequences", {}))
+    return filename
 
-    # Process steps
-    for step in data.get("steps", []):
-        processed_step = process_step(step, cf["sequences"])
-        cf["steps"].append(processed_step)
-
-    return cf
 
 def validate_input_data(data):
     """

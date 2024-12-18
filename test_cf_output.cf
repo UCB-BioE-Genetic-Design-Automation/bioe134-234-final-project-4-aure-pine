@@ -1,0 +1,51 @@
+{
+    "steps": [
+        {
+            "operation": "Assemble",
+            "input": [
+                "promoter",
+                "cds",
+                "terminator"
+            ],
+            "output": "TestPlasmid",
+            "enzymes": [
+                "BsaI"
+            ]
+        }
+    ],
+    "sequences": {
+        "promoter": {
+            "sequence": "ATGCGT",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "cds": {
+            "sequence": "TTGACC",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        },
+        "terminator": {
+            "sequence": "GGCTAA",
+            "ext5": null,
+            "ext3": null,
+            "is_double_stranded": true,
+            "is_circular": false,
+            "mod_ext5": null,
+            "mod_ext3": null
+        }
+    },
+    "metadata": {
+        "experiment_name": "TestConstruct",
+        "date": null,
+        "author": null,
+        "description": ""
+    }
+}

@@ -1,0 +1,21 @@
+LOCUS       TestConstruct             18 bp    DNA              UNK 01-JAN-1980
+DEFINITION  Annotated construct for TestConstruct using GoldenGate.
+ACCESSION   TestConstruct
+VERSION     TestConstruct
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     promoter        1..6
+                     /label="promoter"
+                     /sequence="ATGCGT"
+     CDS             7..12
+                     /label="cds"
+                     /sequence="TTGACC"
+     terminator      13..18
+                     /label="terminator"
+                     /sequence="GGCTAA"
+ORIGIN
+        1 atgcgtttga ccggctaa
+//
