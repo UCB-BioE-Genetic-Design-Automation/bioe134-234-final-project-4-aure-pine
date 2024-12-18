@@ -1,0 +1,80 @@
+{
+    "steps": [
+      {
+        "operation": "PCR",
+        "output": "OutputPCRProduct",
+        "forward_oligo": "ForwardPrimer",
+        "reverse_oligo": "ReversePrimer",
+        "template": "TemplateDNA",
+        "product_size": null
+      },
+      {
+        "operation": "Digest",
+        "dna": "InputDNA",
+        "enzymes": ["Enzyme1", "Enzyme2"],
+        "fragSelect": 0,
+        "output": "OutputFragment",
+        "product_size": null
+      },
+      {
+        "operation": "Ligate",
+        "dnas": ["InputFragment1", "InputFragment2"],
+        "output": "OutputLigatedProduct"
+      },
+      {
+        "operation": "GoldenGate",
+        "dnas": ["InputPart1", "InputPart2"],
+        "enzyme": "TypeIISEnzyme",
+        "output": "GoldenGateProduct"
+      },
+      {
+        "operation": "Gibson",
+        "dnas": ["InputDNA1", "InputDNA2"],
+        "output": "GibsonProduct"
+      },
+      {
+        "operation": "Transform",
+        "dna": "PlasmidDNA",
+        "strain": "HostStrain",
+        "antibiotics": ["Antibiotic1", "Antibiotic2"],
+        "temperature": null,
+        "output": "TransformedCells"
+      }
+    ],
+    "sequences": {
+      "ForwardPrimer": {
+        "sequence": "ForwardPrimerSequence",
+        "ext5": null,
+        "ext3": null,
+        "is_double_stranded": false,
+        "is_circular": false,
+        "mod_ext5": null,
+        "mod_ext3": null
+      },
+      "ReversePrimer": {
+        "sequence": "ReversePrimerSequence",
+        "ext5": null,
+        "ext3": null,
+        "is_double_stranded": false,
+        "is_circular": false,
+        "mod_ext5": null,
+        "mod_ext3": null
+      },
+      "TemplateDNA": {
+        "sequence": "TemplateDNASequence",
+        "ext5": null,
+        "ext3": null,
+        "is_double_stranded": true,
+        "is_circular": true,
+        "mod_ext5": null,
+        "mod_ext3": null
+      }
+    },
+    "metadata": {
+      "experiment_name": "GenericExperiment",
+      "date": null,
+      "author": null,
+      "description": "A generic construction file template."
+    }
+  }
+  

@@ -1,80 +1,127 @@
-from models.construction_file import *
+def build_construction_file(data):
+    """
+    Constructs a Construction File (CF) from the provided data.
 
-def format_step(step):
-    if isinstance(step, PCR):
-        return f"PCR {step.forward_oligo} {step.reverse_oligo} {step.template} {step.output}"
-    elif isinstance(step, GoldenGate):
-        return f"GoldenGate {' '.join(step.dnas)} {step.enzyme} {step.output}"
-    elif isinstance(step, Gibson):
-        return f"Gibson {' '.join(step.dnas)} {step.output}"
-    elif isinstance(step, Transform):
-        return f"Transform {step.dna} {step.strain} {step.antibiotic} {step.output}"
-    else:
-        return f"# Unsupported step: {step.operation}"
+    Parameters:
+        data (dict): A dictionary containing the steps, sequences, and metadata.
 
+    Returns:
+        dict: A dictionary representing the constructed CF.
+    """
+    # Validate the structure of the input data
+    validate_input_data(data)
 
-###
-# Different cloning strategies
-#   New strategies can be added by adding more functions below
-###
-def handle_golden_gate(components: dict, enzymes: list[str], plasmid: str):
-    steps = [
-        PCR(forward_oligo="FWD_primer", reverse_oligo="REV_primer", template=plasmid, output="PCR_product"),
-        GoldenGate(dnas=["PCR_product"], enzyme=enzymes[0], output="GoldenGate_output")
-    ]
-    return steps
+    # Initialize the CF structure
+    cf = {
+        "steps": [],
+        "sequences": {},
+        "metadata": {}
+    }
 
+    # Process metadata
+    cf["metadata"] = process_metadata(data.get("metadata", {}))
 
-def handle_gibson(components: dict, enzymes: list[str], plasmid: str):
-    steps = [
-        PCR(forward_oligo="FWD_primer", reverse_oligo="REV_primer", template=plasmid, output="PCR_product"),
-        Gibson(dnas=["PCR_product"], output="Gibson_output")
-    ]
-    return steps
+    # Process sequences
+    cf["sequences"] = process_sequences(data.get("sequences", {}))
 
+    # Process steps
+    for step in data.get("steps", []):
+        processed_step = process_step(step, cf["sequences"])
+        cf["steps"].append(processed_step)
 
-def handle_restriction_ligation(components: dict, enzymes: list[str], plasmid: str):
-    steps = [
-        PCR(forward_oligo="FWD_primer", reverse_oligo="REV_primer", template=plasmid, output="PCR_product"),
-        Digest(dna="PCR_product", enzymes=enzymes, fragSelect=0, output="Digested_output"),
-        Ligate(dnas=["Digested_output", plasmid], output="Ligation_output")
-    ]
-    return steps
+    return cf
 
-# Centralized dispatcher
-STRATEGY_HANDLERS = {
-    "GoldenGate": handle_golden_gate,
-    "Gibson": handle_gibson,
-    "RestrictionLigation": handle_restriction_ligation
-}
+def validate_input_data(data):
+    """
+    Validates the input data structure to ensure it meets the expected format.
 
-def build_construction_file(components, cloning_strategy, enzymes, plasmid, antibiotic, strain, output_filename: str):
-    """Builds a Construction File describing experimental steps."""
-    if "cds" not in components:
-        raise ValueError("Components must include at least a 'cds' (coding sequence).")
+    Parameters:
+        data (dict): The input data to validate.
 
-    sequences = components.copy()
+    Raises:
+        ValueError: If the data structure is invalid.
+    """
+    if not isinstance(data, dict):
+        raise ValueError("Input data must be a dictionary.")
+    if "steps" not in data or not isinstance(data["steps"], list):
+        raise ValueError("Input data must include a 'steps' list.")
+    if "sequences" not in data or not isinstance(data["sequences"], dict):
+        raise ValueError("Input data must include a 'sequences' dictionary.")
 
-    # Dynamically fetch the strategy handler
-    if cloning_strategy not in STRATEGY_HANDLERS:
-        raise ValueError(f"Unsupported cloning strategy: {cloning_strategy}")
+def process_metadata(metadata):
+    """
+    Processes the metadata section of the input data.
 
-    steps = STRATEGY_HANDLERS[cloning_strategy](components, enzymes, plasmid)
+    Parameters:
+        metadata (dict): The metadata dictionary.
 
-    # Add the final transform step
-    transform_output = steps[-1].output
-    steps.append(Transform(dna=transform_output, strain=strain, antibiotic=antibiotic, output="Final_product"))
+    Returns:
+        dict: Processed metadata.
+    """
+    default_metadata = {
+        "experiment_name": "Unknown Experiment",
+        "date": None,
+        "author": None,
+        "description": ""
+    }
+    merged_metadata = {**default_metadata, **metadata}
+    return {key: merged_metadata[key] for key in default_metadata}
 
-    # Write to the Construction File
-    cf = ConstructionFile(steps=steps, sequences=sequences)
-    cf_filename = f"{output_filename}.txt"
-    with open(cf_filename, "w") as file:
-        file.write("# Sequences\n")
-        for name, seq in cf.sequences.items():
-            file.write(f"{name}\t{seq}\n")
-        file.write("\n# Steps\n")
-        for step in cf.steps:
-            file.write(format_step(step) + "\n")
-    print(f"Construction File created: {cf_filename}")
+def process_sequences(sequences):
+    """
+    Processes the sequences section of the input data.
 
-    return cf_filename
+    Parameters:
+        sequences (dict): The sequences dictionary.
+
+    Returns:
+        dict: Processed sequences.
+    """
+    processed_sequences = {}
+    for name, seq_data in sequences.items():
+        processed_sequences[name] = process_sequence(seq_data)
+    return processed_sequences
+
+def process_sequence(seq_data):
+    """
+    Processes an individual sequence.
+
+    Parameters:
+        seq_data (dict): The sequence data dictionary.
+
+    Returns:
+        dict: Processed sequence data.
+    """
+    required_keys = ["sequence", "is_double_stranded", "is_circular"]
+    for key in required_keys:
+        if key not in seq_data:
+            raise ValueError(f"Sequence data missing required key: {key}")
+
+    return {
+        "sequence": seq_data.get("sequence", ""),
+        "ext5": seq_data.get("ext5"),
+        "ext3": seq_data.get("ext3"),
+        "is_double_stranded": seq_data.get("is_double_stranded", False),
+        "is_circular": seq_data.get("is_circular", False),
+        "mod_ext5": seq_data.get("mod_ext5"),
+        "mod_ext3": seq_data.get("mod_ext3")
+    }
+
+def process_step(step, sequences):
+    """
+    Processes an individual step in the CF.
+
+    Parameters:
+        step (dict): The step data dictionary.
+        sequences (dict): The dictionary of sequences for validation.
+
+    Returns:
+        dict: Processed step data.
+    """
+    if "operation" not in step:
+        raise ValueError("Step data missing 'operation' key.")
+
+    operation = step["operation"]
+
+    # Add operation-specific processing logic here if needed
+    return step
