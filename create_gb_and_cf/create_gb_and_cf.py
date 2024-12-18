@@ -9,23 +9,23 @@ VALID_ENZYMES = {
                             'XbaI', 'PstI', 'HindIII', 'NotI', 'XmaI', 'SmaI', 'KpnI', 'SacI', 'SalI']
 }
 
-def validate_inputs(cloning_strategy: str, components: dict, req_restr_enzymes: list[str] = None):
+def validate_inputs(cloning_strategy: str, components: dict, restriction_enzymes: list[str] = None):
     """
-    Validates the inputs for the create_gb_and_cf function.
+    Description:
+    Validates the inputs for the `create_gb_and_cf` function.
 
-    Checks:
-    1. Cloning strategy is supported.
-    2. Components contain only valid DNA bases (A, T, C, G) and must include at least a CDS.
-    3. Restriction enzymes (if provided) are valid for the cloning strategy.
+    Input:
+    - cloning_strategy (str): Cloning strategy (e.g., "GoldenGate").
+    - components (dict): Dictionary of component names mapped to DNA sequences.
+    - restriction_enzymes (list[str], optional): List of restriction enzymes.
 
-    Parameters:
-    - cloning_strategy (str): Cloning strategy (e.g., "GoldenGate", "Gibson").
-    - components (dict): Dictionary of component names to DNA sequences.
-    - req_restr_enzymes (list[str], optional): User-defined restriction enzymes.
+    Output:
+    - tuple: Validated components dictionary and list of restriction enzymes.
 
-    Returns:
-    - dict: Cleaned and validated components.
-    - list[str]: Validated restriction enzymes.
+    Raises:
+    - ValueError: If the cloning strategy is unsupported.
+    - ValueError: If the components dictionary is missing a CDS or contains invalid DNA characters.
+    - ValueError: If any restriction enzyme is not valid for the cloning strategy.
     """
     # 1. Validate cloning strategy
     if cloning_strategy not in VALID_ENZYMES:
@@ -44,28 +44,30 @@ def validate_inputs(cloning_strategy: str, components: dict, req_restr_enzymes: 
     # 3. Validate restriction enzymes
     valid_enzymes_for_strategy = VALID_ENZYMES[cloning_strategy]
     validated_enzymes = []
-    if req_restr_enzymes:
-        invalid_enzymes = [enz for enz in req_restr_enzymes if enz not in valid_enzymes_for_strategy]
+    if restriction_enzymes:
+        invalid_enzymes = [enz for enz in restriction_enzymes if enz not in valid_enzymes_for_strategy]
         if invalid_enzymes:
             raise ValueError(f"Invalid enzymes: {invalid_enzymes} for cloning strategy '{cloning_strategy}'. "
                              f"Allowed enzymes: {valid_enzymes_for_strategy}")
-        validated_enzymes = req_restr_enzymes
+        validated_enzymes = restriction_enzymes
 
     return components, validated_enzymes
 
 def build_sequence(components: dict, homologous_overhangs: dict = None):
     """
-    Builds a sequence by concatenating components and adding homologous overhangs.
+    Description:
+    Constructs a DNA sequence by concatenating components and adding homologous overhangs.
 
-    Parameters:
-    - components (dict): Dictionary of components with their sequences.
-        Must include at least 'cds'. Example:
-        {"cds": "ATGGCTA", "promoter": "GGTCA", "UTR5": "GCTA", "terminator": "TGCCT"}
-    - homologous_overhangs (dict, optional): Dictionary of overhangs to add to the sequence.
-        Example: {"5_prime": "AATT", "3_prime": "GGCC"}
+    Input:
+    - components (dict): Dictionary of component names mapped to DNA sequences.
+    - homologous_overhangs (dict, optional): Dictionary of 5' and 3' overhang sequences.
 
-    Returns:
-    - Seq: A Bio.Seq object representing the built sequence.
+    Output:
+    - Seq: A Bio.Seq object representing the constructed sequence.
+
+    Raises:
+    - ValueError: If the components dictionary is missing a CDS.
+    - ValueError: If any component or overhang contains invalid DNA characters.
     """
     valid_bases = {"A", "T", "C", "G"}
 
@@ -103,73 +105,40 @@ def build_sequence(components: dict, homologous_overhangs: dict = None):
     full_sequence = "".join(sequence_parts)
     return Seq(full_sequence)
 
-def create_gb_and_cf(cloning_strategy:str, plasmid:str, components:dict, req_restr_enzymes:list[str], antibiotic:str = 'Amp', strain:str = 'S. cerevisiae' , gb_filename:str = 'gb_output', cf_filename:str = 'cf_output'):
+def create_gb_and_cf(construct_id, construct_name, cloning_strategy:str, plasmid:str, components:dict, restriction_enzymes:list[str], 
+                     antibiotic:str = 'Amp', strain:str = 'S. cerevisiae' , gb_filename:str = 'gb_output', cf_filename:str = 'cf_output'):
     """
-    Main function to create GenBank and Construction File.
-    1) Checks the inputs
-        - These are if the component sequences are made out of the proper bases, the cloning strategy is one of the supported ones, 
-        and if the optionally provided enzymes work with the provided cloning strategy
-    2) Takes the components and builds a sequence
-        - This includes all elements in the "components" dictionary and the homologous overhangs if they are given
-    3) Builds a GenBank file
-        1) Finds restriction sites on the built sequence based on the cloning strategy and/or given required restriction enzymes (req_restr_enzymes)
-        2) Annotates the components, using the GenBank feature annotations
-        3) Annotates restriction sites using the length of the binding sites for the restriction enzymes and the proper GenBank feature annotation categories.
-        4) Writing a GenBank file with the name from output_filename (if given, otherwise just 'output')
-    4) Creates a ConstructionFile text file
-        - To be implemented and thought out later. 
+    Description:
+    Creates both a GenBank file and a Construction File for a specified cloning strategy.
 
-    Parameters:
-    - cloning_strategy (str): Cloning strategy (e.g., "GoldenGate", "Gibson").
-    - plasmid (str): Name of the backbone plasmid. This is NOT a sequence for the backbone, but a name eg. "pUC1345". Used for 	building the Construction file.
-    - components (dict): Dictionary of components to annotate, e.g., 
-        {"cds": "GCTA", "promoter": "ATCG", "UTR5": "GATC", "terminator": "CTAG", "UTR3": "GCTA"}. These are mappings of specific sequence features to 
-        sequence strings of A,T,G, or C characters. It must contain at least a CDS.
-    - req_restr_enzymes (list[str], optional): List of user given restriction enzymes that they want to use in the experiment. 
-        These are validated to work with the desired cloning strategy by comparing them to the restriction enzyme lists.
-    - output_filename (str, optional): The desired name for the output GenBank file.
+    Input:
+    - construct_id (str): Identifier for the construct.
+    - construct_name (str): Name of the construct.
+    - cloning_strategy (str): Cloning strategy (e.g., "GoldenGate").
+    - plasmid (str): Name of the backbone plasmid.
+    - components (dict): Dictionary of components to annotate.
+    - restriction_enzymes (list[str]): User-specified restriction enzymes.
+    - antibiotic (str, optional): Antibiotic resistance marker (default: "Amp").
+    - strain (str, optional): Strain name for the construction file (default: "S. cerevisiae").
+    - gb_filename (str, optional): Desired name for the output GenBank file.
+    - cf_filename (str, optional): Desired name for the output Construction File.
+
+    Output:
+    - tuple: The names of the created GenBank and Construction File.
+
+    Raises:
+    - ValueError: If inputs fail validation.
     """
     # Step 1: Validate inputs
-    components, enzymes = validate_inputs(cloning_strategy, components, req_restr_enzymes)
+    components, enzymes = validate_inputs(cloning_strategy, components, restriction_enzymes)
 
     # Step 2: Build the full sequence
     sequence = build_sequence(components)
 
     # Step 3: Build the GenBank file
-    gb_file = build_genbank_file(sequence, components, cloning_strategy, enzymes, plasmid, gb_filename)
+    gb_file = build_genbank_file(construct_id, construct_name, sequence, components, cloning_strategy, gb_filename)
 
     # Step 4: Placeholder for Construction File creation
     cf_file = build_construction_file(components, cloning_strategy, enzymes, plasmid, antibiotic, strain, cf_filename)
 
     return gb_file, cf_file
-
-
-if __name__ == "__main__":
-    # Example inputs
-    cloning_strategy = "GoldenGate"
-    plasmid = "pUC1345"
-    components = {
-        "UTR5": "GATCGATCGATC",
-        "promoter": "ATGCGTACGTAG",
-        "cds": "ATGGCTAGCTAGCTAGCTA",
-        "terminator": "CGTACGTAGCTAGCTAGCTA",
-        "UTR3": "GCGATCGTAGCTAGCTA"
-    }
-    req_restr_enzymes = ["BsaI"]
-    gb_filename = "example_genbank.gb"
-    cf_filename = "example_construction.cf"
-
-    # Run the function
-    try:
-        gb_file, cf_file = create_gb_and_cf(
-            cloning_strategy=cloning_strategy,
-            plasmid=plasmid,
-            components=components,
-            req_restr_enzymes=req_restr_enzymes,
-            gb_filename=gb_filename,
-            cf_filename=cf_filename
-        )
-        print(f"GenBank file created: {gb_file}")
-        print(f"Construction file created: {cf_file}")
-    except ValueError as e:
-        print(f"Error: {e}")

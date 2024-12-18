@@ -5,14 +5,18 @@ from Bio import SeqIO
 
 def annotate_features(seq: Seq, components: dict):
     """
-    Annotates components on a sequence.
+    Description:
+    Annotates sequence components on a DNA sequence with GenBank-compliant feature annotations.
 
-    Parameters:
-    - seq (Seq): The sequence to annotate.
-    - components (dict): Dictionary of components with their sequences (e.g., {"cds": "ATGCGT"}).
+    Input:
+    - seq (Seq): A Bio.Seq object representing the DNA sequence to annotate.
+    - components (dict): A dictionary of component names (e.g., "cds") mapped to their sequences (str).
 
-    Returns:
-    - list: List of SeqFeature annotations for components.
+    Output:
+    - list: A list of Bio.SeqFeature objects representing the annotated features.
+
+    Raises:
+    - ValueError: If a component's sequence contains invalid DNA characters.
     """
 
     features = []
@@ -45,19 +49,22 @@ def annotate_features(seq: Seq, components: dict):
 
 def write_genbank_file(id, construct_name: str, seq: Seq, features: list, output_filename: str, cloning_strategy: str):
     """
+    Description:
     Writes a GenBank file with annotated sequence features.
 
-    Parameters:
-    - id (str):
-    - construct_name (str):
-    - seq (Seq): The full sequence to write to the GenBank file.
-    - features (list): List of SeqFeature annotations for components and restriction sites.
-    - output_filename (str): Base name for the output GenBank file.
-    - plasmid (str): Name of the backbone plasmid (used for metadata).
-    - cloning_strategy (str): The chosen cloning strategy (used for metadata).
+    Input:
+    - id (str): Identifier for the sequence record.
+    - construct_name (str): Name for the construct in the GenBank file.
+    - seq (Seq): A Bio.Seq object representing the full sequence.
+    - features (list): A list of Bio.SeqFeature objects for annotation.
+    - output_filename (str): Base name for the GenBank file (without extension).
+    - cloning_strategy (str): The cloning strategy used (e.g., "GoldenGate").
 
-    Returns:
+    Output:
     - str: The name of the generated GenBank file.
+
+    Raises:
+    - OSError: If the output filename is empty or invalid.
     """
     if not output_filename or not output_filename.strip():
         raise OSError("Invalid filename provided")
@@ -83,14 +90,23 @@ def write_genbank_file(id, construct_name: str, seq: Seq, features: list, output
 
 def build_genbank_file(id: str, construct_name: str, sequence: Seq, components: dict, cloning_strategy: str, output_filename: str):
     """
-    Builds and writes a GenBank file of the created insert with annotated components.
+    Description:
+    Builds and writes a GenBank file with annotated sequence components.
 
-    Parameters:
-    - sequence (Seq): The built sequence from components.
-    - components (dict): Dictionary of components with their sequences.
-    - cloning_strategy (str): Cloning strategy to determine valid restriction enzymes.
-    - plasmid (str): Name of the backbone plasmid for metadata.
-    - output_filename (str): Name for the output GenBank file.
+    Input:
+    - id (str): Identifier for the sequence record.
+    - construct_name (str): Name for the construct in the GenBank file.
+    - sequence (Seq): A Bio.Seq object representing the DNA sequence.
+    - components (dict): Dictionary of components to annotate.
+    - cloning_strategy (str): The chosen cloning strategy.
+    - output_filename (str): Base name for the GenBank file.
+
+    Output:
+    - str: The name of the generated GenBank file.
+
+    Raises:
+    - ValueError: If a component contains invalid DNA characters.
+    - OSError: If the output filename is empty or invalid.
     """
     # Step 1: Annotate the features
     features = annotate_features(sequence, components)

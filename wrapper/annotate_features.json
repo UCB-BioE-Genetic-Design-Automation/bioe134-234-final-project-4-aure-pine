@@ -1,0 +1,39 @@
+{
+    "id": "org.c9.function.bioe_134.DNA.annotate_features",
+    "name": "Annotate DNA Features",
+    "description": "Annotates specified DNA components on a sequence with GenBank-compliant feature annotations.",
+    "type": "function",
+    "keywords": ["DNA", "annotation", "bioinformatics", "GenBank"],
+    "inputs": [
+        {
+            "name": "seq",
+            "type": "string",
+            "description": "A string representing the DNA sequence to annotate."
+        },
+        {
+            "name": "components",
+            "type": "object",
+            "description": "A dictionary of component names mapped to their DNA sequences."
+        }
+    ],
+    "outputs": [
+        {
+            "type": "array",
+            "description": "An array of annotated DNA features in GenBank format."
+        }
+    ],
+    "examples": [
+        {
+            "input": {
+                "seq": "ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG",
+                "components": {"cds": "ATGGCC"}
+            },
+            "output": {"features": [{"type": "CDS", "location": "0:6"}]}
+        }
+    ],
+    "execution_details": {
+        "language": "Python",
+        "source": "build_gb.py",
+        "execution": "annotate_features"
+    }
+}

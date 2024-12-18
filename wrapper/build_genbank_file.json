@@ -1,0 +1,50 @@
+{
+    "id": "org.c9.function.bioe_134.DNA.build_genbank_file",
+    "name": "Build GenBank File",
+    "description": "Creates and writes a GenBank file with annotated DNA components for a specified cloning strategy.",
+    "type": "function",
+    "keywords": ["GenBank", "annotation", "DNA", "cloning", "bioinformatics"],
+    "inputs": [
+        {
+            "name": "id",
+            "type": "string",
+            "description": "A unique identifier for the sequence record."
+        },
+        {
+            "name": "construct_name",
+            "type": "string",
+            "description": "The name of the DNA construct to be written to the GenBank file."
+        },
+        {
+            "name": "sequence",
+            "type": "string",
+            "description": "A string representing the DNA sequence of the construct."
+        },
+        {
+            "name": "components",
+            "type": "object",
+            "description": "A dictionary mapping component names to their sequences for annotation."
+        },
+        {
+            "name": "cloning_strategy",
+            "type": "string",
+            "description": "The cloning strategy used to generate the construct (e.g., 'GoldenGate')."
+        },
+        {
+            "name": "output_filename",
+            "type": "string",
+            "description": "The desired name for the output GenBank file."
+        }
+    ],
+    "outputs": [
+        {
+            "type": "string",
+            "description": "The filename of the generated GenBank file."
+        }
+    ],
+    "execution_details": {
+        "language": "Python",
+        "source": "build_gb.py",
+        "execution": "build_genbank_file"
+    }
+}

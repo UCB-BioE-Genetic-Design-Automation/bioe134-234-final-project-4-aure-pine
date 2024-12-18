@@ -1,0 +1,63 @@
+{
+    "id": "org.c9.function.bioe_134.DNA.write_genbank_file",
+    "name": "Write GenBank File",
+    "description": "Generates a GenBank file with annotated DNA sequence features.",
+    "type": "function",
+    "keywords": ["GenBank", "DNA", "annotation", "bioinformatics"],
+    "inputs": [
+        {
+            "name": "id",
+            "type": "string",
+            "description": "An identifier for the sequence record."
+        },
+        {
+            "name": "construct_name",
+            "type": "string",
+            "description": "The name of the DNA construct."
+        },
+        {
+            "name": "seq",
+            "type": "string",
+            "description": "A string representing the DNA sequence to be written to the GenBank file."
+        },
+        {
+            "name": "features",
+            "type": "array",
+            "description": "An array of annotated features to include in the GenBank file."
+        },
+        {
+            "name": "output_filename",
+            "type": "string",
+            "description": "The desired name for the output GenBank file."
+        },
+        {
+            "name": "cloning_strategy",
+            "type": "string",
+            "description": "The cloning strategy used (e.g., 'GoldenGate')."
+        }
+    ],
+    "outputs": [
+        {
+            "type": "string",
+            "description": "The filename of the generated GenBank file."
+        }
+    ],
+    "examples": [
+        {
+            "input": {
+                "id": "1",
+                "construct_name": "ExampleConstruct",
+                "seq": "ATGGCCATTGTAATGGGCCGCTGAAAGGGTGCCCGATAG",
+                "features": [{"type": "CDS", "location": "0:6"}],
+                "output_filename": "example_genbank",
+                "cloning_strategy": "GoldenGate"
+            },
+            "output": {"filename": "example_genbank.gb"}
+        }
+    ],
+    "execution_details": {
+        "language": "Python",
+        "source": "build_gb.py",
+        "execution": "write_genbank_file"
+    }
+}

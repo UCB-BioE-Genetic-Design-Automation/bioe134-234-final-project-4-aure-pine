@@ -1,0 +1,35 @@
+{
+    "id": "org.c9.function.bioe_134.DNA.validate_inputs",
+    "name": "Validate DNA Inputs",
+    "description": "Validates DNA sequence components and restriction enzymes for compatibility with cloning strategies.",
+    "type": "function",
+    "keywords": ["DNA", "validation", "bioinformatics", "cloning"],
+    "inputs": [
+        {
+            "name": "cloning_strategy",
+            "type": "string",
+            "description": "The cloning strategy to validate (e.g., 'GoldenGate')."
+        },
+        {
+            "name": "components",
+            "type": "object",
+            "description": "A dictionary of DNA component names mapped to their sequences."
+        },
+        {
+            "name": "restriction_enzymes",
+            "type": "array",
+            "description": "An optional list of restriction enzymes to validate."
+        }
+    ],
+    "outputs": [
+        {
+            "type": "object",
+            "description": "Validated components and restriction enzymes."
+        }
+    ],
+    "execution_details": {
+        "language": "Python",
+        "source": "create_gb_and_cf.py",
+        "execution": "validate_inputs"
+    }
+}

@@ -14,3 +14,6 @@ Then:
     - The "integration testing prompt..." and "function_dev..." files here: https://drive.google.com/drive/folders/1CYU5nGAr3lBrGpFHlQy0ORmJn7LzB-_q
 - Check that it works with LLM?? 
     - How?
+
+
+export PYTHONPATH="${PYTHONPATH}:/Users/ian/1 - Projects/HW/bioe134/bioe134-234-final-project-4-aure-pine/"
