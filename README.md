@@ -6,14 +6,15 @@ My group and I worked on the Prototyping and Optimization project. We implemente
 ---
 
 ## Scope of Work
-What I specifically worked on was the generation of construction and GenBank files from a JSON description. This was intended to automate the creation of annotated GenBank and Construction files for DNA cloning experiments. The project supports multiple cloning strategies, including GoldenGate, Gibson, and Restriction-Ligation, offering robust input validation and compatibility checks.
+What I specifically worked on was the generation of Construction and GenBank files from a JSON description. This was intended to automate the creation of annotated GenBank and Construction files for DNA cloning experiments. The project supports multiple cloning strategies, including GoldenGate, Gibson, and Restriction-Ligation, offering robust input validation and compatibility checks.
 
+I used JSON as the input so an LLM could theoretically parse user input and send this suite of functions data in easily usable format. 
 
 The goal of this project is to streamline the process of constructing annotated DNA sequences for cloning experiments. The key functionalities include:
 
 1. **Annotation of Sequence Features**: Identifies and annotates components such as CDS, promoters, and UTRs on a given DNA sequence.
 2. **GenBank File Generation**: Creates GenBank files with annotated sequence features.
-3. **Construction File Creation**: (Future work) Generates construction files for DNA assembly protocols.
+3. **Construction File Creation**: Generates construction files for DNA assembly protocols.
 4. **Validation of Cloning Inputs**: Ensures that user-provided DNA components, cloning strategies, and restriction enzymes meet the specified criteria.
 
 Each function is implemented in **Python** with error handling and input validation to ensure compatibility and accuracy.
